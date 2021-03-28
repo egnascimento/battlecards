@@ -6,7 +6,8 @@ const router = express.Router();
 const index = require('./routes/index');
 const personRoute = require('./routes/cardRoute');
 app.use(cors())
-app.use(express.static('img'))
+console.log(__dirname + 'img')
+app.use('/img', express.static(__dirname + '/img'));
 app.use('/', index);
 app.use('/persons', personRoute);
 module.exports = app;
