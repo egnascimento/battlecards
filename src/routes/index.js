@@ -7,16 +7,16 @@ var cards_index = [0,1,2,3,4,5,6,7,8,9];
 var id = 'Empty'
 
 cards = [
-            {title:'Waterloo Boy', image:'../assets/waterlooboy.jpg', param: [200,10,10,1937]},
-            {title:'Sugarcand Harvester CH950', image:'../assets/ch950.png', param: [200,10,10,2017]},
-            {title:'Starfire SF6000', image:'../assets/sf6000.png', param: [200,10,10,2015]},
-            {title:'Operations Center', image:'../assets/opscenter.png', param: [200,10,10,2016]},
-            {title:'Harvester Analytics', image:'../assets/hanalytics.png', param: [200,10,10,2010]},
-            {title:'Tractor 9 series', image:'../assets/tractor9.png', param: [200,10,10,2008]},
-            {title:'Tractor 7 series', image:'../assets/tractor7.png', param: [200,10,10,2007]},
-            {title:'Sprayer', image:'../assets/sprayer.png', param: [200,10,10,1950]},
-            {title:'Bailer', image:'../assets/bailer.png', param: [200,10,10,1980]},
-            {title:'Tractor 5 series', image:'../assets/tractor5.png', param: [200,10,10,2005]},
+            {title:'Waterloo Boy', image:'https://mysterious-fjord-93971.herokuapp.com/img/waterlooboy.jpg', param: [200,10,10,1937]},
+            {title:'Sugarcand Harvester CH950', image:'https://mysterious-fjord-93971.herokuapp.com/img/ch950.png', param: [200,10,10,2017]},
+            {title:'Starfire SF6000', image:'https://mysterious-fjord-93971.herokuapp.com/img/sf6000.png', param: [200,10,10,2015]},
+            {title:'Operations Center', image:'https://mysterious-fjord-93971.herokuapp.com/img/opscenter.png', param: [200,10,10,2016]},
+            {title:'Harvester Analytics', image:'https://mysterious-fjord-93971.herokuapp.com/img/cp690.png', param: [200,10,10,2010]},
+            {title:'Tractor 9 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor9.png', param: [200,10,10,2008]},
+            {title:'Tractor 7 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor7.png', param: [200,10,10,2007]},
+            {title:'Sprayer', image:'https://mysterious-fjord-93971.herokuapp.com/img/sprayer.png', param: [200,10,10,1950]},
+            {title:'Bailer', image:'https://mysterious-fjord-93971.herokuapp.com/img/bailer.png', param: [200,10,10,1980]},
+            {title:'Tractor 5 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor5.png', param: [200,10,10,2005]},
 ]
 
 function rotateArray(array) 
