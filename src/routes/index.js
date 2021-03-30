@@ -102,7 +102,8 @@ router.get('/play', function (req, res, next) {
                     console.log(cards[games[req.query.id].playerB.cards[0]].param[req.query.param])
                     rotateArray(games[req.query.id].playerA.cards)
                     rotateArray(games[req.query.id].playerB.cards)
-                    console.log('Draw')
+                    games[req.query.id].playerA.last_message = 'Draw'
+                    games[req.query.id].playerB.last_message = 'Draw'
                 }
             }
             else{
@@ -132,7 +133,8 @@ router.get('/play', function (req, res, next) {
                     console.log(cards[games[req.query.id].playerB.cards[0]].param[req.query.param])
                     rotateArray(games[req.query.id].playerA.cards)
                     rotateArray(games[req.query.id].playerB.cards)
-                    console.log('Draw')
+                    games[req.query.id].playerA.last_message = 'Draw'
+                    games[req.query.id].playerB.last_message = 'Draw'
                 }
             }
         }
@@ -166,7 +168,6 @@ router.get('/play', function (req, res, next) {
         });
     }
 
-    console.log('Fixing last message')
     if ( req.query.player=='A' && games[req.query.id].playerA.last_message == "You lost... :(" )
     {
         games[req.query.id].playerA.last_message = "Waiting for other oponent"
@@ -183,6 +184,20 @@ router.get('/play', function (req, res, next) {
     {
         games[req.query.id].playerB.last_message = "Your turn"
     }
+    if ( games[req.query.id].playerA.last_message == "Draw" )
+    {
+        if(games[req.query.id].turn == 'A')
+        {
+            games[req.query.id].playerA.last_message = "Your turn"
+            games[req.query.id].playerB.last_message = "Waiting for other oponent"
+        }
+        else 
+        {
+            games[req.query.id].playerB.last_message = "Your turn"
+            games[req.query.id].playerA.last_message = "Waiting for other oponent"
+        }
+    }
+
 
 });
 
