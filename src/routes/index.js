@@ -184,17 +184,26 @@ router.get('/play', function (req, res, next) {
     {
         games[req.query.id].playerB.last_message = "Your turn"
     }
-    if ( games[req.query.id].playerA.last_message == "Draw" )
+    if ( req.query.player=='A' && games[req.query.id].playerA.last_message == "Draw" )
     {
         if(games[req.query.id].turn == 'A')
         {
             games[req.query.id].playerA.last_message = "Your turn"
-            games[req.query.id].playerB.last_message = "Waiting for other oponent"
         }
         else 
         {
-            games[req.query.id].playerB.last_message = "Your turn"
             games[req.query.id].playerA.last_message = "Waiting for other oponent"
+        }
+    }
+    if ( req.query.player=='B' && games[req.query.id].playerB.last_message == "Draw" )
+    {
+        if(games[req.query.id].turn == 'B')
+        {
+            games[req.query.id].playerB.last_message = "Your turn"
+        }
+        else 
+        {
+            games[req.query.id].playerB.last_message = "Waiting for other oponent"
         }
     }
 
