@@ -82,17 +82,18 @@ var animals = [ "Aardvark","Albatross","Alligator","Alpaca","Ant","Anteater","An
 var cards_index = [0,1,2,3,4,5,6,7,8,9];
 var id = 'Empty'
 
+// Popularity (0-1000), Weight, Technology (0-100), Year
 cards = [
-            {title:'Waterloo Boy', image:'https://mysterious-fjord-93971.herokuapp.com/img/waterlooboy.jpg', param: [200,10,10,1937]},
-            {title:'Sugarcand Harvester CH950', image:'https://mysterious-fjord-93971.herokuapp.com/img/ch950.png', param: [200,10,10,2017]},
-            {title:'Starfire SF6000', image:'https://mysterious-fjord-93971.herokuapp.com/img/sf6000.png', param: [200,10,10,2015]},
-            {title:'Operations Center', image:'https://mysterious-fjord-93971.herokuapp.com/img/opscenter.png', param: [200,10,10,2016]},
-            {title:'Harvester Analytics', image:'https://mysterious-fjord-93971.herokuapp.com/img/cp690.png', param: [200,10,10,2010]},
-            {title:'Tractor 9 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor9.png', param: [200,10,10,2008]},
-            {title:'Tractor 7 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor7.png', param: [200,10,10,2007]},
-            {title:'Sprayer', image:'https://mysterious-fjord-93971.herokuapp.com/img/sprayer.png', param: [200,10,10,1950]},
-            {title:'Bailer', image:'https://mysterious-fjord-93971.herokuapp.com/img/bailer.png', param: [200,10,10,1980]},
-            {title:'Tractor 5 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor5.png', param: [200,10,10,2005]},
+            {title:'Waterloo Boy', image:'https://mysterious-fjord-93971.herokuapp.com/img/waterlooboy.jpg', param: [300,2804,10,1917]},
+            {title:'Sugarcand Harvester CH950', image:'https://mysterious-fjord-93971.herokuapp.com/img/ch950.png', param: [500,35545,70,2019]},
+            {title:'Starfire SF6000', image:'https://mysterious-fjord-93971.herokuapp.com/img/sf6000.png', param: [750,2,80,2016]},
+            {title:'Operations Center', image:'https://mysterious-fjord-93971.herokuapp.com/img/opscenter.png', param: [700,0,90,2014]},
+            {title:'Cotton Picker CP-690', image:'https://mysterious-fjord-93971.herokuapp.com/img/cp690.png', param: [500,29937,60,2017]},
+            {title:'Tractor 9 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor9.png', param: [600,25546,50,2011]},
+            {title:'Tractor 7 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor7.png', param: [650,11203,45,2003]},
+            {title:'Sprayer 600 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/sprayer.png', param: [450,16548,85,2021]},
+            {title:'Baler', image:'https://mysterious-fjord-93971.herokuapp.com/img/bailer.png', param: [400,3257,30,2014]},
+            {title:'Tractor 5 series', image:'https://mysterious-fjord-93971.herokuapp.com/img/tractor5.png', param: [200,2470,40,1983]},
 ]
 
 function rotateArray(array) 
