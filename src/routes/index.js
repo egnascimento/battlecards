@@ -239,7 +239,7 @@ router.get('/play', function (req, res, next) {
 
     if ( req.query.player=='A' && games[req.query.id].playerA.last_message == "You lose." )
     {
-        games[req.query.id].playerA.last_message = "Waiting for other oponent"
+        games[req.query.id].playerA.last_message = "Waiting for your opponent"
     }
     if ( req.query.player=='A' && games[req.query.id].playerA.last_message == "You win!" )
     {
@@ -247,7 +247,7 @@ router.get('/play', function (req, res, next) {
     }
     if ( req.query.player=='B' && games[req.query.id].playerB.last_message == "You lose." )
     {
-        games[req.query.id].playerB.last_message = "Waiting for other oponent"
+        games[req.query.id].playerB.last_message = "Waiting for your opponent"
     }
     if ( req.query.player=='B' && games[req.query.id].playerB.last_message == "You win!" )
     {
@@ -261,7 +261,7 @@ router.get('/play', function (req, res, next) {
         }
         else 
         {
-            games[req.query.id].playerA.last_message = "Waiting for other oponent"
+            games[req.query.id].playerA.last_message = "Waiting for your opponent"
         }
     }
     if ( req.query.player=='B' && games[req.query.id].playerB.last_message == "Tie" )
@@ -272,7 +272,7 @@ router.get('/play', function (req, res, next) {
         }
         else 
         {
-            games[req.query.id].playerB.last_message = "Waiting for other oponent"
+            games[req.query.id].playerB.last_message = "Waiting for your opponent"
         }
     }
 
@@ -294,7 +294,7 @@ router.get('/new', function (req, res, next) {
     game = {
         id:id, 
         playerA:{ cards:cards_index.slice(0,5), last_message:'Your turn!'}, 
-        playerB:{ cards:cards_index.slice(5,10), last_message: 'Your oponents turn'},
+        playerB:{ cards:cards_index.slice(5,10), last_message: 'Your opponent\'s turn'},
         turn:'A'}
 
     games[id] = game;
