@@ -135,6 +135,9 @@ router.get('/play', function (req, res, next) {
     console.log(games[req.query.id].playerA)
     console.log(cards[games[req.query.id].playerA[0]])
 
+    var winner = cards[games[req.query.id].playerA.cards[0]].title
+    var loser = cards[games[req.query.id].playerB.cards[0]].title
+
     if(req.query.param == undefined)
     {
         console.log('Sending status')
@@ -153,8 +156,7 @@ router.get('/play', function (req, res, next) {
                     games[req.query.id].playerA.cards.push(game.playerB.cards[0])
                     games[req.query.id].playerB.cards.shift()
                     games[req.query.id].playerA.last_message = 'You win!'
-                    games[req.query.id].play.winner = cards[games[req.query.id].playerA.cards[0]].title
-                    games[req.query.id].play.loser = cards[games[req.query.id].playerB.cards[0]].title
+
                 }
                 else if(cards[games[req.query.id].playerA.cards[0]].param[req.query.param] < cards[games[req.query.id].playerB.cards[0]].param[req.query.param])
                 {
@@ -163,8 +165,6 @@ router.get('/play', function (req, res, next) {
                     games[req.query.id].playerB.cards.push(game.playerA.cards[0])
                     games[req.query.id].playerA.cards.shift()
                     games[req.query.id].turn = 'B'
-                    games[req.query.id].play.loser = cards[games[req.query.id].playerA.cards[0]].title
-                    games[req.query.id].play.winner = cards[games[req.query.id].playerB.cards[0]].title
                     
                 }
                 else 
@@ -229,6 +229,10 @@ router.get('/play', function (req, res, next) {
             version: "1",
             game: games[req.query.id].playerA,
             card: cards[games[req.query.id].playerA.cards[0]],
+            play: {
+                winner: winner, 
+                loser: loser,
+            },
         });
     }
     else{
@@ -298,7 +302,6 @@ router.get('/new', function (req, res, next) {
         playerA:{ cards:cards_index.slice(0,5), last_message:'Your turn!'}, 
         playerB:{ cards:cards_index.slice(5,10), last_message: 'Your opponent\'s turn'},
         turn:'A',
-        play: {winner:'', loser:''},
     }
 
     games[id] = game;
