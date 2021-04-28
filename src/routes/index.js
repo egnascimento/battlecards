@@ -297,7 +297,9 @@ router.get('/new', function (req, res, next) {
         id:id, 
         playerA:{ cards:cards_index.slice(0,5), last_message:'Your turn!'}, 
         playerB:{ cards:cards_index.slice(5,10), last_message: 'Your opponent\'s turn'},
-        turn:'A'}
+        turn:'A',
+        play: {winner:'', loser:''},
+    }
 
     games[id] = game;
 
