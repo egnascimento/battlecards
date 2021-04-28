@@ -114,7 +114,7 @@ var game = {
             id:id, 
             playerA:{ cards:cards_index.slice(0,5), last_message:''}, 
             playerB:{ cards:cards_index.slice(6,10), last_message: ''},
-            play: {winner:'', loser:''}
+            play: {winner:'', loser:''},
             turn:'A'}
 
 var games = {}
