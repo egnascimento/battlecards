@@ -135,17 +135,20 @@ router.get('/play', function (req, res, next) {
     console.log(games[req.query.id].playerA)
     console.log(cards[games[req.query.id].playerA[0]])
 
+    
     var winner=''
     var loser= ''
 
     if(req.query.param == undefined)
     {
         console.log('Sending status')
+        winner = games[req.query.id].play.winner
+        loser = games[req.query.id].play.loser
     }
     else
     {
-        winner = cards[games[req.query.id].playerA.cards[0]].title
-        loser = cards[games[req.query.id].playerB.cards[0]].title
+        games[req.query.id].play.winner = cards[games[req.query.id].playerA.cards[0]].title
+        games[req.query.id].play.loser = cards[games[req.query.id].playerB.cards[0]].title
 
         if(req.query.player == games[req.query.id].turn)
         {
@@ -236,8 +239,8 @@ router.get('/play', function (req, res, next) {
             game: games[req.query.id].playerA,
             card: cards[games[req.query.id].playerA.cards[0]],
             play: {
-                winner: winner, 
-                loser: loser,
+                winner: games[req.query.id].play.winner, 
+                loser: games[req.query.id].play.loser,
             },
         });
     }
@@ -247,8 +250,8 @@ router.get('/play', function (req, res, next) {
             game: games[req.query.id].playerB,
             card: cards[games[req.query.id].playerB.cards[0]],
             play: {
-                winner: winner, 
-                loser: loser,
+                winner: games[req.query.id].play.winner, 
+                loser: games[req.query.id].play.loser,
             },
         });
     }
