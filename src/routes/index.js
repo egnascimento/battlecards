@@ -135,8 +135,8 @@ router.get('/play', function (req, res, next) {
     console.log(games[req.query.id].playerA)
     console.log(cards[games[req.query.id].playerA[0]])
 
-    var winner = cards[games[req.query.id].playerA.cards[0]].title
-    var loser = cards[games[req.query.id].playerB.cards[0]].title
+    var winner=''
+    var loser= ''
 
     if(req.query.param == undefined)
     {
@@ -144,6 +144,9 @@ router.get('/play', function (req, res, next) {
     }
     else
     {
+        winner = cards[games[req.query.id].playerA.cards[0]].title
+        loser = cards[games[req.query.id].playerB.cards[0]].title
+
         if(req.query.player == games[req.query.id].turn)
         {
             console.log('Your turn!')
@@ -242,7 +245,11 @@ router.get('/play', function (req, res, next) {
         res.status(200).send({
             version: "1",
             game: games[req.query.id].playerB,
-            card: cards[games[req.query.id].playerB.cards[0]]
+            card: cards[games[req.query.id].playerB.cards[0]],
+            play: {
+                winner: winner, 
+                loser: loser,
+            },
         });
     }
 
