@@ -156,6 +156,7 @@ router.get('/play', function (req, res, next) {
                     games[req.query.id].playerA.cards.push(game.playerB.cards[0])
                     games[req.query.id].playerB.cards.shift()
                     games[req.query.id].playerA.last_message = 'You win!'
+                    games[req.query.id].playerB.last_message = 'You lose.'
 
                 }
                 else if(cards[games[req.query.id].playerA.cards[0]].param[req.query.param] < cards[games[req.query.id].playerB.cards[0]].param[req.query.param])
@@ -165,6 +166,8 @@ router.get('/play', function (req, res, next) {
                     games[req.query.id].playerB.cards.push(game.playerA.cards[0])
                     games[req.query.id].playerA.cards.shift()
                     games[req.query.id].turn = 'B'
+                    games[req.query.id].playerA.last_message = 'You lose.'
+                    games[req.query.id].playerB.last_message = 'You win!'
                     
                 }
                 else 
